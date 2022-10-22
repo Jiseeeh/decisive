@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { Toast, toast } from "react-hot-toast";
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { useIdle } from "react-use";
 
 import Navbar from "../components/Navbar";
@@ -34,7 +34,9 @@ const Home: NextPage = () => {
     toast.dismiss(t.id);
   };
 
-  const onChoose = () => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     const chooseBtn = document.querySelector("#choose-btn");
     const choices = inputValue.split(",");
 
@@ -44,8 +46,7 @@ const Home: NextPage = () => {
       const res = choices[Math.floor(Math.random() * choices.length)];
 
       setTimeout(() => {
-        if (choices.length === 1)
-          reject(new Error("Please use a comma to separate your choices!"));
+        if (choices.length === 1) reject(new Error("Please input properly"));
         if (res) resolve(res);
       }, 1500);
     });
@@ -88,7 +89,7 @@ const Home: NextPage = () => {
       <Navbar />
       <main className="flex flex-col items-center">
         <Image src="/decide.svg" width={300} height={300} />
-        <section className="flex flex-col">
+        <form className="flex flex-col" onSubmit={onSubmit}>
           <div className="-mt-10 font-bold form-control w-full max-w-xs">
             <label className="label">
               <span className="label-text">Enter your choices</span>
@@ -110,11 +111,10 @@ const Home: NextPage = () => {
           <button
             id="choose-btn"
             className="mt-3 btn btn-outline hover:bg-accent"
-            onClick={onChoose}
           >
             choose
           </button>
-        </section>
+        </form>
       </main>
       <Footer />
       {/* hidden modal */}
