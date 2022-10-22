@@ -2,12 +2,48 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { toast } from "react-hot-toast";
+import { useState, useEffect, ChangeEvent } from "react";
+import { useIdle } from "react-use";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
 
 const Home: NextPage = () => {
+  const isIdle = useIdle(3000);
+  const [inputValue, setInputValue] = useState("");
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+  const onRandomize = () => {
+    const randomChoices: string[] = [
+      "Buy now, Buy later",
+      "Go out alone, Go out with friends",
+      "Workout now, Workout later, Workout tomorrow",
+      "Take a nap, Continue studying",
+      "React, Vue, Svelte, Angular, Solid",
+      "Node, Laravel, SpringBoot",
+    ];
+
+    const choice =
+      randomChoices[Math.floor(Math.random() * randomChoices.length + 1)];
+
+    setInputValue(choice);
+  };
+
+  useEffect(() => {
+    if (isIdle)
+      toast(() => (
+        <span>
+          🤔 Still can't decide?&nbsp;
+          <button className="btn btn-xs" onClick={onRandomize}>
+            Randomize
+          </button>
+        </span>
+      ));
+  }, [isIdle]);
+
   return (
     <div className="text-accent min-h-screen flex flex-col bg-primary">
       <Head>
@@ -27,10 +63,13 @@ const Home: NextPage = () => {
               type="text"
               placeholder="Your choices go here"
               className="input input-ghost focus:outline-accent font-normal w-full max-w-xs"
+              spellCheck={false}
+              value={inputValue}
+              onChange={onInputChange}
             />
             <label className="label">
               <span className="label-text-alt text-accent italic">
-                Separate it with spaces!
+                Separate it with comma!
               </span>
             </label>
           </div>
