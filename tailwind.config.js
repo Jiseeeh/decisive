@@ -17,6 +17,9 @@ module.exports = {
       outlineColor: {
         accent: "#272343",
       },
+      fontFamily: {
+        "space-mono": ["Space Mono", "monospace"],
+      },
     },
   },
   plugins: [require("daisyui")],
