@@ -92,6 +92,7 @@ const Home: NextPage = () => {
       <main className="flex flex-col items-center">
         <Image
           src="/decide.svg"
+          priority={true}
           width={300}
           height={300}
           alt="two characters pointing on to something"
