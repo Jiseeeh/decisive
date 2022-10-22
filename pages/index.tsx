@@ -10,8 +10,9 @@ import Footer from "../components/Footer";
 import Modal from "../components/Modal";
 
 const Home: NextPage = () => {
-  const isIdle = useIdle(3000);
+  const isIdle = useIdle(10000);
   const [inputValue, setInputValue] = useState("");
+  const [modalContent, setModalContent] = useState("");
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
@@ -27,9 +28,41 @@ const Home: NextPage = () => {
     ];
 
     const choice =
-      randomChoices[Math.floor(Math.random() * randomChoices.length + 1)];
+      randomChoices[Math.floor(Math.random() * randomChoices.length)];
 
     setInputValue(choice);
+  };
+
+  const onChoose = () => {
+    const chooseBtn = document.querySelector("#choose-btn");
+    const choices = inputValue.split(",");
+
+    chooseBtn?.classList.add("loading");
+
+    const result = new Promise((resolve, reject) => {
+      const res = choices[Math.floor(Math.random() * choices.length)];
+
+      setTimeout(() => {
+        if (choices.length === 1)
+          reject(new Error("Please use a comma to separate your choices!"));
+        if (res) resolve(res);
+      }, 1500);
+    });
+
+    result
+      .then(
+        (value) => {
+          setModalContent(`${value}`);
+          document.getElementById("modal")?.click();
+        },
+        (error) => {
+          setModalContent(`${error}`);
+          document.getElementById("modal")?.click();
+        }
+      )
+      .finally(() => {
+        chooseBtn?.classList.remove("loading");
+      });
   };
 
   useEffect(() => {
@@ -74,10 +107,9 @@ const Home: NextPage = () => {
             </label>
           </div>
           <button
+            id="choose-btn"
             className="mt-3 btn btn-outline hover:bg-accent"
-            onClick={() => {
-              document.getElementById("modal")?.click();
-            }}
+            onClick={onChoose}
           >
             choose
           </button>
@@ -85,7 +117,7 @@ const Home: NextPage = () => {
       </main>
       <Footer />
       {/* hidden modal */}
-      <Modal content="The quick brown fox jumps over the lazy dog" />
+      <Modal content={modalContent} />
     </div>
   );
 };
