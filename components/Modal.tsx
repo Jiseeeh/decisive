@@ -28,6 +28,7 @@ const Modal: React.FC<ModalProps> = ({ content }) => {
 
   return (
     <>
+      <label htmlFor="modal" className="hidden"></label>
       <input type="checkbox" id="modal" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
