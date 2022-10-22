@@ -14,6 +14,9 @@ module.exports = {
       textColor: {
         accent: "#272343",
       },
+      outlineColor: {
+        accent: "#272343",
+      },
     },
   },
   plugins: [require("daisyui")],
