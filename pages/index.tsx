@@ -90,7 +90,12 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <main className="flex flex-col items-center">
-        <Image src="/decide.svg" width={300} height={300} />
+        <Image
+          src="/decide.svg"
+          width={300}
+          height={300}
+          alt="two characters pointing on to something"
+        />
         <form className="flex flex-col" onSubmit={onSubmit}>
           <div className="-mt-10 font-bold form-control w-full max-w-xs">
             <label className="label">
@@ -111,6 +116,7 @@ const Home: NextPage = () => {
             </label>
           </div>
           <button
+            type="submit"
             id="choose-btn"
             className="mt-3 btn btn-outline hover:bg-accent"
           >
