@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { toast } from "react-hot-toast";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
