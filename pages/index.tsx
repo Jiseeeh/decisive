@@ -103,7 +103,7 @@ const Home: NextPage = () => {
               onChange={onInputChange}
             />
             <label className="label">
-              <span className="label-text-alt text-accent italic">
+              <span className="label-text-alt italic">
                 Separate it with comma!
               </span>
             </label>
