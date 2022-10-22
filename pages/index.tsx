@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { toast } from "react-hot-toast";
+import { Toast, toast } from "react-hot-toast";
 import { useState, useEffect, ChangeEvent } from "react";
 import { useIdle } from "react-use";
 
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
     setInputValue(e.target.value);
   };
 
-  const onRandomize = () => {
+  const onRandomize = (t: Toast) => {
     const randomChoices: string[] = [
       "Buy now, Buy later",
       "Go out alone, Go out with friends",
@@ -31,6 +31,7 @@ const Home: NextPage = () => {
       randomChoices[Math.floor(Math.random() * randomChoices.length)];
 
     setInputValue(choice);
+    toast.dismiss(t.id);
   };
 
   const onChoose = () => {
@@ -67,10 +68,10 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (isIdle)
-      toast(() => (
+      toast((t) => (
         <span>
           🤔 Still can't decide?&nbsp;
-          <button className="btn btn-xs" onClick={onRandomize}>
+          <button className="btn btn-xs" onClick={() => onRandomize(t)}>
             Randomize
           </button>
         </span>
