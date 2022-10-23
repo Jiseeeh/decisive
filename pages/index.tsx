@@ -103,7 +103,7 @@ const Home: NextPage = () => {
               <span className="label-text md:text-xl">Enter your choices</span>
             </label>
             <input
-              data-testId="choices-input"
+              data-testid="choices-input"
               type="text"
               placeholder="Your choices go here"
               className="input input-ghost focus:outline-accent font-normal w-full max-w-xs"
@@ -118,7 +118,7 @@ const Home: NextPage = () => {
             </label>
           </div>
           <button
-            data-testId="choose-btn"
+            data-testid="choose-btn"
             type="submit"
             id="choose-btn"
             className="mt-3 btn btn-outline dark:hover:text-white hover:bg-accent"

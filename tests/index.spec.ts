@@ -4,9 +4,9 @@ const url = "http://localhost:3000";
 
 test.describe("valid and invalid inputs", async () => {
   //   selectors
-  const inputSelector = '[data-testId="choices-input"]';
-  const chooseBtnSelector = '[data-testId="choose-btn"]';
-  const modalSelector = '[data-testId="modal-content"]';
+  const inputSelector = '[data-testid="choices-input"]';
+  const chooseBtnSelector = '[data-testid="choose-btn"]';
+  const modalSelector = '[data-testid="modal-content"]';
 
   test("invalid input", async ({ page }) => {
     await page.goto(url);

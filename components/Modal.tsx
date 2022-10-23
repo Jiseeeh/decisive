@@ -37,7 +37,7 @@ const Modal: React.FC<ModalProps> = ({ content }) => {
           </h3>
           <p className="py-4 ">
             {hasError ? "You got an" : "You got"}{" "}
-            <span data-testId="modal-content" className="font-bold">
+            <span data-testid="modal-content" className="font-bold">
               {content}!
             </span>
           </p>
