@@ -121,7 +121,7 @@ const Home: NextPage = () => {
             data-testId="choose-btn"
             type="submit"
             id="choose-btn"
-            className="mt-3 btn btn-outline hover:bg-accent"
+            className="mt-3 btn btn-outline dark:hover:text-white hover:bg-accent"
           >
             choose
           </button>
