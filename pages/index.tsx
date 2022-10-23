@@ -80,7 +80,7 @@ const Home: NextPage = () => {
   }, [isIdle]);
 
   return (
-    <div className="text-accent font-space-mono min-h-screen flex flex-col bg-primary">
+    <div className="text-accent dark:text-white font-space-mono min-h-screen flex flex-col bg-primary">
       <Head>
         <title>Decisive</title>
         <meta
