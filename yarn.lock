@@ -1046,6 +1046,14 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@playwright/test@^1.27.1":
+  "integrity" "sha512-mrL2q0an/7tVqniQQF6RBL2saskjljXzqNcCOVMUjRIgE6Y38nCNaP+Dc2FBW06bcpD3tqIws/HT9qiMHbNU0A=="
+  "resolved" "https://registry.npmjs.org/@playwright/test/-/test-1.27.1.tgz"
+  "version" "1.27.1"
+  dependencies:
+    "@types/node" "*"
+    "playwright-core" "1.27.1"
+
 "@rollup/plugin-babel@^5.2.0":
   "integrity" "sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q=="
   "resolved" "https://registry.npmjs.org/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz"
@@ -3965,6 +3973,11 @@
   "version" "4.2.0"
   dependencies:
     "find-up" "^4.0.0"
+
+"playwright-core@1.27.1":
+  "integrity" "sha512-9EmeXDncC2Pmp/z+teoVYlvmPWUC6ejSSYZUln7YaP89Z6lpAaiaAnqroUt/BoLo8tn7WYShcfaCh+xofZa44Q=="
+  "resolved" "https://registry.npmjs.org/playwright-core/-/playwright-core-1.27.1.tgz"
+  "version" "1.27.1"
 
 "postcss-import@^14.1.0":
   "integrity" "sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw=="
