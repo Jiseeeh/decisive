@@ -30,7 +30,7 @@ const Modal: React.FC<ModalProps> = ({ content }) => {
     <>
       <label htmlFor="modal" className="hidden"></label>
       <input type="checkbox" id="modal" className="modal-toggle" />
-      <div className="modal modal-bottom sm:modal-middle">
+      <div className="modal modal-bottom dark:text-white sm:modal-middle">
         <div className="modal-box">
           <h3 className="font-bold text-lg">
             {hasError ? "Please follow instructions!" : randomHeading}
