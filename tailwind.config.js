@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "#E3F6F5",
+        primary: "#F6B89E",
         accent: "#272343",
-        "dark-primary": "#BAE8E8",
+        "dark-primary": "#F88B69",
       },
       textColor: {
         accent: "#272343",
@@ -19,6 +19,9 @@ module.exports = {
       },
       fontFamily: {
         "space-mono": ["Space Mono", "monospace"],
+      },
+      placeholderColor: {
+        accent: "#272343",
       },
     },
   },
