@@ -80,7 +80,7 @@ const Home: NextPage = () => {
   }, [isIdle]);
 
   return (
-    <div className="text-accent dark:text-white font-space-mono min-h-screen flex flex-col bg-primary">
+    <div className="text-accent font-space-mono min-h-screen flex flex-col bg-primary">
       <Head>
         <title>Decisive</title>
         <meta
@@ -100,19 +100,21 @@ const Home: NextPage = () => {
         <form className="flex flex-col" onSubmit={onSubmit}>
           <div className="-mt-10 font-bold form-control w-full max-w-xs">
             <label className="label">
-              <span className="label-text md:text-xl">Enter your choices</span>
+              <span className="label-text dark:text-accent md:text-xl">
+                Enter your choices
+              </span>
             </label>
             <input
               data-testid="choices-input"
               type="text"
               placeholder="Your choices go here"
-              className="input input-ghost focus:outline-accent font-normal w-full max-w-xs"
+              className="input input-ghost placeholder-accent dark:focus:placeholder-white dark:text-accent focus:outline-accent font-normal w-full max-w-xs"
               spellCheck={false}
               value={inputValue}
               onChange={onInputChange}
             />
             <label className="label">
-              <span className="label-text-alt italic md:text-sm">
+              <span className="label-text-alt dark:text-accent italic md:text-sm">
                 Separate it with comma!
               </span>
             </label>
@@ -121,7 +123,7 @@ const Home: NextPage = () => {
             data-testid="choose-btn"
             type="submit"
             id="choose-btn"
-            className="mt-3 btn btn-outline dark:hover:text-white hover:bg-accent"
+            className="mt-3 btn btn-outline dark:text-accent dark:hover:text-white hover:bg-accent"
           >
             choose
           </button>
