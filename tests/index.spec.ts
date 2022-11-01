@@ -38,6 +38,10 @@ test.describe("valid and invalid inputs", async () => {
     // for custom loading simulation i added on choose click
     await page.waitForTimeout(1600);
 
-    !(await page.locator(modalSelector).innerText()).includes("Error");
+    // means no error if modal text doesn't include Error message
+
+    expect(
+      !(await page.locator(modalSelector).innerText()).includes("Error")
+    ).toBeTruthy();
   });
 });
