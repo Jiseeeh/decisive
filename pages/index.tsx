@@ -85,13 +85,6 @@ const Home: NextPage = () => {
 
   return (
     <div className="text-accent font-space-mono min-h-screen flex flex-col bg-primary">
-      <Head>
-        <title>Decisive</title>
-        <meta
-          name="description"
-          content="A web app that will help you decide."
-        />
-      </Head>
       <Navbar />
       <main className="flex flex-col items-center">
         <Image
