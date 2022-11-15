@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -55,6 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
       </Head>
       <Component {...pageProps} />
+      <Analytics />
       <Toaster />
     </>
   );
