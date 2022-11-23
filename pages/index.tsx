@@ -13,6 +13,7 @@ const Home: NextPage = () => {
   const isIdle = useIdle(10000);
   const [inputValue, setInputValue] = useState("");
   const [modalContent, setModalContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
@@ -46,10 +47,9 @@ const Home: NextPage = () => {
       return;
     }
 
-    const chooseBtn = document.querySelector("#choose-btn");
-    const choices = inputValue.split(",");
+    setIsLoading(true);
 
-    chooseBtn?.classList.add("loading");
+    const choices = inputValue.split(",");
 
     const result = new Promise((resolve, reject) => {
       const res = choices[Math.floor(Math.random() * choices.length)];
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
         }
       )
       .finally(() => {
-        chooseBtn?.classList.remove("loading");
+        setIsLoading(false);
       });
   };
 
@@ -125,7 +125,9 @@ const Home: NextPage = () => {
             data-testid="choose-btn"
             type="submit"
             id="choose-btn"
-            className="mt-3 btn btn-outline dark:text-accent dark:hover:text-white hover:bg-accent"
+            className={`mt-3 btn btn-outline ${
+              isLoading ? "loading" : ""
+            } dark:text-accent dark:hover:text-white hover:bg-accent`}
           >
             choose
           </button>
