@@ -30,24 +30,24 @@ const Modal: React.FC<ModalProps> = ({ content }) => {
     <>
       <label htmlFor="modal" className="hidden"></label>
       <input type="checkbox" id="modal" className="modal-toggle" />
-      <div className="modal modal-bottom dark:text-white sm:modal-middle">
-        <div className="modal-box">
+      <section className="modal modal-bottom dark:text-white sm:modal-middle">
+        <section className="modal-box">
           <h3 className="font-bold text-lg">
             {hasError ? "Please follow instructions!" : randomHeading}
           </h3>
-          <p className="py-4 ">
+          <section className="py-4 ">
             {hasError ? "You got an" : "You got"}{" "}
             <span data-testid="modal-content" className="font-bold">
               {content}!
             </span>
-          </p>
-          <div className="modal-action">
+          </section>
+          <section className="modal-action">
             <label htmlFor="modal" className="btn">
               Thanks!
             </label>
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
     </>
   );
 };
