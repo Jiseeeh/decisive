@@ -77,7 +77,7 @@ const Home: NextPage = () => {
   }, [isIdle]);
 
   return (
-    <div className="text-accent font-space-mono min-h-screen flex flex-col bg-primary">
+    <section className="text-accent font-space-mono min-h-screen flex flex-col bg-primary">
       <Navbar />
       <main className="flex flex-col items-center">
         <Image
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
           alt="two characters pointing on to something"
         />
         <form className="flex flex-col" onSubmit={onSubmit}>
-          <div className="-mt-10 font-bold form-control w-full max-w-xs">
+          <section className="-mt-10 font-bold form-control w-full max-w-xs">
             <label className="label">
               <span className="label-text dark:text-accent md:text-xl">
                 Enter your choices
@@ -108,7 +108,7 @@ const Home: NextPage = () => {
                 Separate it with comma!
               </span>
             </label>
-          </div>
+          </section>
           <button
             data-testid="choose-btn"
             type="submit"
@@ -124,7 +124,7 @@ const Home: NextPage = () => {
       <Footer />
       {/* hidden modal */}
       <Modal content={modalContent} choices={inputValue} />
-    </div>
+    </section>
   );
 };
 
