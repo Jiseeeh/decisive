@@ -41,6 +41,11 @@ const Home: NextPage = () => {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!inputValue) {
+      toast.error("Please input properly!");
+      return;
+    }
+
     const chooseBtn = document.querySelector("#choose-btn");
     const choices = inputValue.split(",");
 
