@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import { Toast, toast } from "react-hot-toast";
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
@@ -8,6 +7,7 @@ import { useIdle } from "react-use";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
+import randomizeMilliseconds from "../helper/randomizeMilliseconds";
 
 const Home: NextPage = () => {
   const isIdle = useIdle(10000);
@@ -53,11 +53,12 @@ const Home: NextPage = () => {
 
     const result = new Promise((resolve, reject) => {
       const res = choices[Math.floor(Math.random() * choices.length)];
+      const milliseconds = randomizeMilliseconds();
 
       setTimeout(() => {
         if (choices.length === 1) reject(new Error("Please input properly"));
         if (res) resolve(res);
-      }, 1500);
+      }, milliseconds);
     });
 
     result
