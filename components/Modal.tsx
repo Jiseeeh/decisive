@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 
 interface ModalProps {
   content: string;
+  choices: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ content }) => {
+const Modal: React.FC<ModalProps> = ({ content, choices }) => {
   const randomHeadings = [
     "Everything happens for a reason.",
     "Go for it!",
@@ -35,11 +36,15 @@ const Modal: React.FC<ModalProps> = ({ content }) => {
           <h3 className="font-bold text-lg">
             {hasError ? "Please follow instructions!" : randomHeading}
           </h3>
-          <section className="py-4 ">
-            {hasError ? "You got an" : "You got"}{" "}
-            <span data-testid="modal-content" className="font-bold">
+          <section className="py-4">
+            <p data-testid="modal-content" className="font-bold">
+              {hasError ? "You got an " : "You got "}
               {content}!
-            </span>
+            </p>
+            <section className="break-words">
+              The choices were{" "}
+              <span className="text-error">[{choices.toUpperCase()}]</span>
+            </section>
           </section>
           <section className="modal-action">
             <label htmlFor="modal" className="btn">

@@ -123,7 +123,7 @@ const Home: NextPage = () => {
       </main>
       <Footer />
       {/* hidden modal */}
-      <Modal content={modalContent} />
+      <Modal content={modalContent} choices={inputValue} />
     </div>
   );
 };
