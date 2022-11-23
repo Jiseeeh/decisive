@@ -130,7 +130,7 @@ const Home: NextPage = () => {
               isLoading ? "loading" : ""
             } dark:text-accent dark:hover:text-white hover:bg-accent`}
           >
-            choose
+            {isLoading ? "Choosing" : "Choose"}
           </button>
         </form>
       </main>
