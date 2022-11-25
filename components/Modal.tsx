@@ -17,7 +17,12 @@ const Modal: React.FC<ModalProps> = ({ content, choices }) => {
     "Everything comes gradually at its appointed hour.",
     "What's meant to be will always find a way.",
     "Once you make a decision, the universe conspires to make it happen.",
+    "Some things are destined to be -- it just takes us a couple of tries to get there.",
+    "Listen to the advice of your own destiny! All is a given!",
+    "A person often meets his destiny on the road he took to avoid it.",
+    "A man does not make his destiny: he accepts it or denies it.",
   ];
+
   const [randomHeading, setRandomHeading] = useState("");
   const hasError = content.includes("Error");
 
