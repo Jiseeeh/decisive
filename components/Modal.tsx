@@ -38,7 +38,7 @@ const Modal: React.FC<ModalProps> = ({ content, choices }) => {
       <input type="checkbox" id="modal" className="modal-toggle" />
       <section className="modal modal-bottom dark:text-white sm:modal-middle">
         <section className="modal-box">
-          <h3 className="font-bold text-lg">
+          <h3 className="text-lg">
             {hasError ? "Please follow instructions!" : randomHeading}
           </h3>
           <section className="py-4">
