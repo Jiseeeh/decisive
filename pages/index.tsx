@@ -79,7 +79,7 @@ const Home: NextPage = () => {
   return (
     <section className="text-accent font-space-mono min-h-screen flex flex-col bg-primary">
       <Navbar />
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col my-auto items-center">
         <Image
           src="/decide.svg"
           priority={true}
