@@ -98,7 +98,7 @@ const Home: NextPage = () => {
               data-testid="choices-input"
               type="text"
               placeholder="Your choices go here"
-              className="input input-bordered bg-transparent placeholder-accent dark:focus:placeholder-white dark:text-accent focus:outline-accent font-normal w-full max-w-xs"
+              className="input input-bordered bg-transparent placeholder-accent dark:text-accent focus:outline-accent font-normal w-full max-w-xs"
               spellCheck={false}
               value={inputValue}
               onChange={onInputChange}
